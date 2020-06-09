@@ -18,7 +18,7 @@ server.post('/api/view', (req, res) => {
         console.log(req.body)
         res.send(req.body.challenge);
     } else {
-        console.log('Slack Payload: ' + req.body.event.text);
+        console.log('Slack Payload: ' + req.body.event);
     }
 })
 
