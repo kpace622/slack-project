@@ -11,7 +11,7 @@ server.get('/', (req, res) => {
   });
 
 server.post('/api/view', (req, res) => {
-    console.log('check')
+    console.log(req.body)
     if(req.body.challenge) {
         res.status(200);
         res.contentType('text/plain');
