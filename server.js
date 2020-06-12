@@ -1,8 +1,13 @@
 const express = require('express');
 
 const server = express();
+const db = require('./database/index');
+const bodyParser = require('body-parser')
 
 server.use(express.json());
+server.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 server.get('/', (req, res) => {
     res.send(`
@@ -19,7 +24,10 @@ server.post('/api/view', (req, res) => {
         res.send(req.body.challenge);
     } else {
         console.log('Slack Payload: ' + req.body.event);
-    }
+        db.insert(req.body.event.text).returning('*').into('event').then(function(data) {
+          res.send(data);
+        });
+      }
 })
 
 module.exports = server;
