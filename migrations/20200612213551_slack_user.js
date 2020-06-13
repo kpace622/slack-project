@@ -5,7 +5,7 @@ exports.up = function(knex) {
       tbl.integer('user_id')
       .references('users.id')
       .unsigned()
-      .onDelete('TRUNCATE');
+      .onDelete('CASCADE');
   })
 };
 
