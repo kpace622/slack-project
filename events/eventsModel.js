@@ -1,7 +1,8 @@
 const db = require('../database/db-config');
 
 module.exports = {
-    addEvent
+    addEvent,
+    getEvent
 }
 
 function addEvent(event){
@@ -9,6 +10,10 @@ function addEvent(event){
     const newEvent = {text, type, event_timestamp, slack_user, team, channel, timestamp};
     console.log('event', newEvent)
     return db('events')
-        .insert(newEvent)
-        
+        .insert(newEvent)       
+}
+
+function getEvent(){
+    return db('events')
+    .select('*')
 }
