@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      filename: '../database/index'
+      filename: 'process.env.PG_CONNECTION_STRING'
     }
   },
 
