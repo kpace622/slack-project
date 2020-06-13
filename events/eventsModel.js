@@ -15,5 +15,4 @@ function addEvent(event){
 
 function getEvent(){
     return db('events')
-    .select('*')
 }
