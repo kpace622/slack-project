@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      filename: 'process.env.PG_CONNECTION_STRING'
+      filename: 'ec2-34-202-88-122.compute-1.amazonaws.com'
     }
   },
 

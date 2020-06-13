@@ -1,6 +1,6 @@
 const knex = require('knex');
 
-const config = require('../knexfile');
+const config = require('./index');
 
 const db = knex(config.development);
 
