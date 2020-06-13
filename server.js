@@ -1,7 +1,6 @@
 const express = require('express');
 
 const server = express();
-const db = require('./database/db-config');
 const bodyParser = require('body-parser')
 
 const eventsRouter = require('./events/eventsRouter');
@@ -17,7 +16,5 @@ server.get('/', (req, res) => {
       <h2>Slack Project!</h>
     `);
   });
-
-
 
 module.exports = server;

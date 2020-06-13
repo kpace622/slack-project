@@ -3,7 +3,7 @@ const Events = require('./eventsModel')
 
 const router = express.Router();
 
-server.post('/', (req, res) => {
+router.post('/', (req, res) => {
     console.log(req.body)
     if(req.body.challenge) {
         res.status(200);
