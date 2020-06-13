@@ -18,8 +18,9 @@ router.post('/', (req, res) => {
 router.get('/event', (req, res) => {
     Events.getEvent()
     .then(event => {
+        console.log(event)
         res.status(200)
-        res.json(event)
+        res.send(event)
     })
 })
 
