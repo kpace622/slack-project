@@ -11,7 +11,6 @@ router.post('/', (req, res) => {
         console.log(req.body)
         res.send(req.body.challenge);
     } else {
-        console.log('Slack Payload: ' + req.body.event);
         Events.addEvent(req.body.event)
       }
 })
