@@ -7,7 +7,7 @@ module.exports = {
 
 function addEvent(event){
     const {text, type, event_ts: event_timestamp, user: slack_user, team, channel, ts: timestamp} = event;
-    const newEvent = {text, type, event_timestamp, slack_user, team, channel, timestamp};
+    const newEvent = {text, type, slack_user, team, channel};
     console.log('event2', newEvent)
     return db('events')
         .insert(newEvent)       
